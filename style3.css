@@ -2,7 +2,7 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 20px;
-			background-image: url('DownBad.jpg');
+			background-image: url('Doge.jpg');
 			background-size: cover; 
 			background-repeat: no-repeat;  
 			height: 100vh;
@@ -36,13 +36,12 @@
             height: 150px;
         }
 
-        table {
-            margin: 20px auto;
-            border-collapse: collapse;
-            width: 80%;
-			background-color:  #ff99cc;
-			
-        }
+		table {
+			margin: 10px auto;
+			border-collapse: collapse;
+			width: 80%;
+			background-color: #9494b8;
+		}
 
         table, th, td {
             border: 3px solid black;
