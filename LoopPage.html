@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated RGB Background</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+            overflow: hidden;
+        }
+
+        .rgb-container {
+            position: relative;
+            width: 70%;
+            height: 70%;
+        }
+
+        .rgb-line {
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, red, green, blue);
+            animation: colorShift 4s infinite alternate;
+        }
+
+        .rgb-line.top {
+            top: 0;
+            left: 0;
+        }
+
+        .rgb-line.bottom {
+            bottom: 0;
+            left: 0;
+        }
+
+        .rgb-line.left {
+            height: 100%;
+            width: 4px;
+            left: 0;
+            top: 0;
+            animation-direction: reverse;
+        }
+
+        .rgb-line.right {
+            height: 100%;
+            width: 4px;
+            right: 0;
+            top: 0;
+        }
+
+        @keyframes colorShift {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="rgb-container">
+        <div class="rgb-line top"></div>
+        <div class="rgb-line bottom"></div>
+        <div class="rgb-line left"></div>
+        <div class="rgb-line right"></div>
+    </div>
+</body>
+</html>
