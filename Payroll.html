@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Payroll</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+    <header id="fix">
+        <video src="office.mp4" class="vid-bg" autoplay loop muted></video>
+        <div class="nav-area">
+            <div class="wrapper">
+                <div class="maindiv">
+                    <div id="headerdiv">
+                        <h2>Payroll Management</h2>
+                    </div>
+                    <div id="inputdiv">
+                        <h3>Add Employee</h3>
+                        <label for="employeeName">Employee Name:</label>
+                        <input id="employeeName" type="text">
+                        <label for="daysWorked">Days Worked:</label>
+                        <input id="daysWorked" type="number">
+                        <label for="dailyRate">Daily Rate:</label>
+                        <input id="dailyRate" type="number">
+                        <label for="deduction">Deduction:</label>
+                        <input id="deduction" type="number">
+						
+						<div id="buttonsdiv">
+							<button id="btnAddEmployee">Add Employee</button>
+							<br />
+							<br />
+							<button id="btnClearList">Clear List</button>
+						</div>
+						
+                    </div>
+                    
+                    <div id="tablediv">
+                        <h3>Payroll List</h3>
+                        <table id="payrollTable">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Employee Name</th>
+                                    <th>Days Worked</th>
+                                    <th>Daily Rate</th>
+                                    <th>Gross Pay</th>
+                                    <th>Deduction</th>
+                                    <th>Net Pay</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody"></tbody>
+                        </table>
+                        <div id="totalemployees">Total Employees: <span id="totalEmployees">0</span></div>
+						<div id="delete"><label for="deleteLine">Delete Line:</label></div>
+                        <input id="deleteLine" type="number">
+                        <button id="btnDeleteEmployee">Delete</button>
+                    </div>
+                    <div id="footerdiv">
+                        <h2>&copy; 2023 Payroll System</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+	
+	
+     <!-- First confirmation dialog -->
+<dialog id="dlgConfirm">
+    <form method="dialog">
+        <h4 id="dlgmsg">Are you sure?</h4>
+        <button id="btnConfirm" value="confirm">Yes</button>
+        <button id="btnCancel" value="cancel">No</button>
+    </form>
+</dialog>
+
+<!-- Second confirmation dialog -->
+<dialog id="dlgAreYouSure">
+    <form method="dialog">
+        <h4 id="dlgmsg2">Are you absolutely sure?</h4>
+        <button id="btnYes" value="yes">Yes</button>
+        <button id="btnNo" value="no">No</button>
+    </form>
+</dialog>
+
+<div class="Return">
+		<h3>Go back to main Page <br> <marquee> ← ← ← ← ← ← ← ← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←← ← ← ← ← ← ←</marquee></h3>
+		<a href="https://micogrande-hub.github.io/ITCmykgrande.github.io/" >Rewind to your Mistake</a>
+
+ </div>
+<script src="script4.js" type="text/javascript"></script>
+</body>
+</html>

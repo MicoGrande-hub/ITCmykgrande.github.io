@@ -107,6 +107,26 @@ body
 
 }
 
+.Box4 {
+    width: 43%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    text-align: center;
+    font-size: 20px;
+    z-index: 10;
+    margin-top: 300px;
+    cursor: pointer;
+}
+
+    .Box4:hover {
+        transform: scale(1.02);
+        transition: transform 0.3s ease;
+    }
+
 h3 {
     font-size: 30px;
 }
