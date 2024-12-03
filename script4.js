@@ -43,7 +43,6 @@ document.getElementById('btnAddEmployee').addEventListener('click', () => {
     document.getElementById('deduction').value = '';
 });
 
-// Trigger the confirmation dialog before deleting an employee
 document.getElementById('btnDeleteEmployee').addEventListener('click', () => {
     const line = parseInt(document.getElementById('deleteLine').value) - 1;
     
@@ -52,9 +51,7 @@ document.getElementById('btnDeleteEmployee').addEventListener('click', () => {
         return;
     }
 
-    // Show the first confirmation dialog
     showConfirmationDialog('Are you sure you want to delete this employee?', () => {
-        // Show the second confirmation dialog
         dlgAreYouSure.showModal();
         currentAction = () => {
             payroll.splice(line, 1);
@@ -64,11 +61,8 @@ document.getElementById('btnDeleteEmployee').addEventListener('click', () => {
     });
 });
 
-// Trigger the confirmation dialog before clearing the list
 document.getElementById('btnClearList').addEventListener('click', () => {
-    // Show the first confirmation dialog
     showConfirmationDialog('Are you sure you want to clear the payroll list?', () => {
-        // Show the second confirmation dialog
         dlgAreYouSure.showModal();
         currentAction = () => {
             payroll = [];
@@ -77,7 +71,6 @@ document.getElementById('btnClearList').addEventListener('click', () => {
     });
 });
 
-// Show the first confirmation dialog
 const dlgConfirm = document.getElementById('dlgConfirm');
 const btnConfirm = document.getElementById('btnConfirm');
 const btnCancel = document.getElementById('btnCancel');
@@ -89,20 +82,16 @@ const showConfirmationDialog = (message, action) => {
     dlgConfirm.showModal();
 };
 
-// When the first dialog is closed, show the second dialog
 dlgConfirm.addEventListener('close', () => {
     if (dlgConfirm.returnValue === 'confirm' && typeof currentAction === 'function') {
-        // The first dialog is confirmed, proceed to the second
         dlgAreYouSure.showModal();
     }
 });
 
-// Show the second confirmation dialog after the first one
 const dlgAreYouSure = document.getElementById('dlgAreYouSure');
 const btnYes = document.getElementById('btnYes');
 const btnNo = document.getElementById('btnNo');
 
-// When the second dialog is closed, perform the action if confirmed
 dlgAreYouSure.addEventListener('close', () => {
     if (dlgAreYouSure.returnValue === 'yes' && typeof currentAction === 'function') {
         currentAction();
